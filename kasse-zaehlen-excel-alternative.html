@@ -1,70 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Kasse zählt nicht? Kassensturz ohne Excel (offline) – CashCount</title>
+  <meta name="description" content="Bargeld zählen ohne Rechenstress: Kassensturz, Kassenabschluss, Schichtwechsel, Wechselgeld. Offline im Browser, werbefrei, kein Abo. Sofort-Download." />
+
+  <style>
+    :root{
+      --text:#111;
+      --muted:#555;
+      --bg:#ffffff;
+      --card:#f6f6f6;
+      --border:#e8e8e8;
+      --btn:#111;
+      --btnText:#fff;
+    }
+    body{
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 26px 18px;
+      line-height: 1.65;
+      font-size: 18px; /* <-- größer */
+    }
+    h1{
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.15;
+      margin: 6px 0 10px;
+      letter-spacing:-0.02em;
+    }
+    h2{
+      font-size: 24px;
+      margin-top: 34px;
+      margin-bottom: 12px;
+    }
+    p, li{ font-size: 18px; }
+    .hero{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius: 18px;
+      padding: 18px;
+      margin: 18px 0 24px;
+    }
+    .hero p{ margin: 10px 0; }
+    .subline{
+      color:var(--muted);
+      font-size: 18px;
+      margin: 0 0 12px;
+    }
+    .badges{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 16px;
+    }
+    .badge{
+      border:1px solid var(--border);
+      background:#fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      color:#222;
+    }
+    .ctaRow{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-block;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid #111;
+      background: var(--btn);
+      color: var(--btnText);
+    }
+    .btnSecondary{
+      background:#fff;
+      color:#111;
+    }
+    .note{
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media(min-width: 900px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      background:#fff;
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    ul{ margin-top: 10px; }
+    footer{
+      margin-top: 44px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
 <body>
 
   <h1>Kasse zählt nicht? Kassensturz ohne Excel – einfache Offline-Rechenhilfe für Bargeld</h1>
+  <p class="subline">
+    Du zählst Münzen & Scheine – CashCount rechnet die Gesamtsumme automatisch. Offline im Browser, ohne Abo, ohne Cloud.
+  </p>
 
   <div class="hero">
-    <p><strong>Typische Situation:</strong> Kasse stimmt nicht, Schichtwechsel steht an oder Wechselgeld muss geprüft werden.<br>
-    Du zählst Münzen und Scheine – <strong>CashCount rechnet die Gesamtsumme automatisch</strong> (offline, ohne Abo, ohne Cloud).</p>
+    <div class="badges">
+      <span class="badge">Kassensturz</span>
+      <span class="badge">Kassenabschluss / Tagesabschluss</span>
+      <span class="badge">Schichtwechsel / Kassenübergabe</span>
+      <span class="badge">Wechselgeld prüfen</span>
+      <span class="badge">Abendkasse / Barkasse</span>
+      <span class="badge">ohne Excel</span>
+      <span class="badge">offline</span>
+      <span class="badge">werbefrei</span>
+    </div>
 
-    <a class="cta primary" href="https://farnandwilder.gumroad.com/l/ryijr" target="_blank" rel="noopener">
-      CashCount kaufen (Gumroad) – 14,90 €
-    </a>
-    <a class="cta secondary" href="https://www.etsy.com/de/listing/1904636331" target="_blank" rel="noopener">
-      Alternativ über Etsy kaufen
-    </a>
-    <p><small>Offline nutzbar · kein Abo · keine Cloud · keine Datenspeicherung</small></p>
+    <div class="ctaRow">
+      <a class="btn" href="https://farnandwilder.gumroad.com/l/ryijr" target="_blank" rel="noopener">
+        CashCount herunterladen – 14,90 €
+      </a>
+      <a class="btn btnSecondary" href="https://www.etsy.com/de/listing/1904636331" target="_blank" rel="noopener">
+        Alternativ über Etsy kaufen
+      </a>
+    </div>
+
+    <div class="note">Einmal zahlen · kein Abo · keine Werbung · keine Datenspeicherung</div>
   </div>
 
-  <h2>Wonach wird gesucht, wenn Bargeld Stress macht?</h2>
-  <p>Viele suchen nicht nach „Tool“, sondern nach dem Problem. Häufige Suchanlässe sind:</p>
+  <h2>Wann suchen Leute danach?</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Kasse stimmt nicht</h3>
+      <p>Du willst schnell prüfen, ob der Bargeldbestand plausibel ist – ohne Taschenrechner-Chaos.</p>
+    </div>
+    <div class="card">
+      <h3>Schichtwechsel / Kassenübergabe</h3>
+      <p>Bestand & Wechselgeld kontrollieren, bevor die nächste Schicht übernimmt.</p>
+    </div>
+    <div class="card">
+      <h3>Kassenabschluss / Tagesabschluss</h3>
+      <p>Am Tagesende Bargeld sauber zusammenrechnen – ruhig, übersichtlich, fehlerarm.</p>
+    </div>
+    <div class="card">
+      <h3>Wechselgeld prüfen</h3>
+      <p>Startbestand oder Zwischendurch-Check: Münzen und Scheine eingeben, Summe steht sofort.</p>
+    </div>
+  </div>
+
+  <h2>Warum Excel & Taschenrechner hier oft nerven</h2>
   <ul>
-    <li><strong>Kasse stimmt nicht</strong> (Fehlbetrag, Zahlendreher, Rechenfehler)</li>
-    <li><strong>Kassensturz berechnen</strong> (Tagesabschluss / Kassenabschluss)</li>
-    <li><strong>Schichtwechsel / Kassenübergabe</strong> (Bestand & Wechselgeld prüfen)</li>
-    <li><strong>Wechselgeld zählen</strong> (Startbestand morgens oder zwischendurch)</li>
-    <li><strong>Kasse zählen Excel</strong> (Excel-Vorlage zu umständlich oder fehleranfällig)</li>
+    <li>Du musst parallel addieren und zählen (Fehlerquelle)</li>
+    <li>Zahlendreher & Rechenstress unter Zeitdruck</li>
+    <li>Auf dem Handy ist Excel oft unpraktisch</li>
+    <li>Viele Tools sind mit Werbung, Login oder Abo verbunden</li>
   </ul>
 
-  <div class="box">
-    <h2>Warum Excel & Taschenrechner hier oft nerven</h2>
-    <ul>
-      <li>Du zählst Münzen – und musst parallel addieren (Fehlerquelle)</li>
-      <li>Unter Zeitdruck passieren Zahlendreher</li>
-      <li>Excel ist unhandlich am Handy oder an der Kasse</li>
-      <li>Viele möchten <strong>ohne Cloud</strong> und ohne Abo arbeiten</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h2>Die Lösung: Du zählst – CashCount rechnet</h2>
-    <p>
-      CashCount ist eine kleine Offline-Rechenhilfe im Browser. Du gibst Stückzahlen für Münzen und Scheine ein –
-      die <strong>Gesamtsumme wird sofort berechnet</strong>. Keine Installation, kein Account, keine Werbung.
-    </p>
-    <ul>
-      <li><strong>Kassensturz:</strong> Bargeldsumme sauber berechnen</li>
-      <li><strong>Kassenübergabe:</strong> Bestand nachvollziehbar prüfen</li>
-      <li><strong>Wechselgeld:</strong> Startbestand schnell kontrollieren</li>
-    </ul>
-  </div>
+  <h2>Die Lösung: Du zählst – CashCount rechnet</h2>
+  <p>
+    Du gibst Stückzahlen für Münzen und Scheine ein.
+    CashCount berechnet automatisch die Gesamtsumme – ohne Installation, ohne Registrierung.
+  </p>
 
   <h2>Für wen ist das sinnvoll?</h2>
   <ul>
-    <li>Kleine Betriebe (Einzelhandel, Gastronomie, Floristik)</li>
+    <li>Kleine Betriebe (Einzelhandel, Gastro, Floristik)</li>
     <li>Marktstände & Pop-ups</li>
-    <li>Vereine, Events, Abendkassen</li>
-    <li>Alle, die Bargeld zählen möchten – ohne Rechenstress</li>
+    <li>Vereine, Events, Schulveranstaltungen</li>
+    <li>Alle, die Bargeld zählen ohne Rechenstress möchten</li>
   </ul>
 
-  <div class="box">
-    <h2>Jetzt kaufen (Einmalpreis)</h2>
-    <p><strong>14,90 € einmalig</strong> – kein Abo, keine Folgekosten. Offline nutzbar, datensparsam.</p>
-    <a class="cta primary" href="https://farnandwilder.gumroad.com/l/ryijr" target="_blank" rel="noopener">
-      Sofort-Download (Gumroad)
-    </a>
-    <a class="cta secondary" href="https://www.etsy.com/de/listing/1904636331" target="_blank" rel="noopener">
-      Etsy-Alternative
-    </a>
+  <h2>Noch einmal kurz: Was du bekommst</h2>
+  <ul>
+    <li>Zugang zur Web-App (Browser)</li>
+    <li>Sofort-Download nach Kauf</li>
+    <li>Nutzung am PC, Tablet oder Smartphone</li>
+    <li>Werbefrei, ohne Tracking, ohne Cloud</li>
+  </ul>
+
+  <div class="hero">
+    <div class="ctaRow">
+      <a class="btn" href="https://farnandwilder.gumroad.com/l/ryijr" target="_blank" rel="noopener">
+        CashCount jetzt herunterladen – 14,90 €
+      </a>
+      <a class="btn btnSecondary" href="https://www.etsy.com/de/listing/1904636331" target="_blank" rel="noopener">
+        Alternativ über Etsy kaufen
+      </a>
+    </div>
+    <div class="note">Hinweis: Digitale Produkte – Widerruf erlischt nach Download-Start (Zustimmung beim Kauf).</div>
   </div>
 
+  <footer>
+    <p>
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+    <p>Stand: 2026</p>
+  </footer>
+
 </body>
+</html>
